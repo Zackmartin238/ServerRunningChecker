@@ -23,7 +23,7 @@ else:
     try:
         restart_command = "screen -r main"
         sub = subprocess.Popen(restart_command, shell=True)
-        tryRunning = subprocess.check_output("readlink -f start.sh", shell=True).decode().strip()
+        tryRunning = subprocess.check_output("/home/zackmartin238/Spigot/start.sh", shell=True).decode().strip()
         subprocess.Popen(tryRunning, shell=True)
     except Exception as e:
         print(f"An error occurred: {e}")
