@@ -23,6 +23,12 @@ else:
         print(f"An error occurred: {e}")
 import subprocess 
 import datetime
+
+# Get the current date and time
+current_time = datetime.datetime.now()
+
+# Convert the current time to a formatted string
+formatted_time = current_time.strftime("[%Y-%m-%d %H:%M:%S]")
   
 pytonProcess = subprocess.check_output("ps aux | grep spigot",shell=True).decode() 
 pytonProcess = pytonProcess.split('\n') 
@@ -33,7 +39,7 @@ for process in pytonProcess:
         currently_Running = True
         good_process = process
 if currently_Running == True:
-        print("["+datetime.datetime()+f"] Lookin good. It's running: {good_process}")
+        print("["+formatted_time+"] Lookin good. It's running: {good_process}")
 else:
     print("Well, it's not running... maybe try restarting?")    
     restartshell = subprocess.Popen("su root", Shell=True)
