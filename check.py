@@ -35,7 +35,7 @@ pytonProcess = pytonProcess.split('\n')
 currently_Running = False  
 for process in pytonProcess: 
     print(process)
-    if 'spigot' in process:
+    if 'spigot' in process and "grep" not in process:
         currently_Running = True
         good_process = process
 if currently_Running == True:
