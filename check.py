@@ -42,7 +42,7 @@ if currently_Running == True:
         print("["+formatted_time+"] Lookin good. It's running: {good_process}")
 else:
     print("Well, it's not running... maybe try restarting?")    
-    restartshell = subprocess.Popen("su root", Shell=True)
+    restartshell = subprocess.Popen("su root")
     restartshell.stdin.write("kali").encode()
     restartshell.stdin.write("cd").encode()
     restartshell.stdin.write("screen -r main")
