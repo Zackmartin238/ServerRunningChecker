@@ -20,9 +20,9 @@ while True:
     else:
         print("Well, it's not running... maybe try restarting?")
 
-        # Restart the 'spigot' process
+        # Restart the 'spigot' process within the main screen session
         try:
-            restart_command = "screen -r main && cd /home/zackmartin238/Spigot && ./start.sh"
+            restart_command = "screen -S main -X stuff 'cd /home/zackmartin238/Spigot && ./start.sh\n'"
             subprocess.run(restart_command, shell=True, check=True)
             print("Restarted successfully!")
         except subprocess.CalledProcessError as e:
@@ -30,4 +30,3 @@ while True:
 
     # Wait for some time before checking again (e.g., 1 minute)
     time.sleep(60)
-
