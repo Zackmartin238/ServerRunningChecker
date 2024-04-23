@@ -43,6 +43,8 @@ if currently_Running == True:
 else:
     print("Well, it's not running... maybe try restarting?")    
     restartshell = subprocess.Popen("su root", Shell=True)
-    restartshell.stdin.write("kali \n")
+    restartshell.stdin.write("kali").encode()
+    restartshell.stdin.write("cd").encode()
+    restartshell.stdin.write("screen -r main")
     tryRunning = subprocess.check_output("readlink -f start.sh", shell=True).decode()
     restartshell.stdin.write(tryRunning)
